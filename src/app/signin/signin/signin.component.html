@@ -1,0 +1,37 @@
+<!-- Main Content -->
+<div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <h1 style="text-align: center; margin-bottom: 12px; color: lightslategray;">Вход</h1>
+      <form novalidate>
+        <div class="control-group">
+          <div class="form-group">
+            <label>Электронная почта</label>
+            <input type="text" [(ngModel)]="signin.email"[disabled]="processing" name="email" class="form-control"
+              placeholder="Электронная почта">
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group">
+            <label>Пароль</label>
+            <input type="password" [(ngModel)]="signin.password" [disabled]="processing" name="password" class="form-control"
+              placeholder="Пароль">
+          </div>
+        </div>
+        <br>
+        <app-loading *ngIf="processing && (!success && !failure)"></app-loading>
+        <div class="alert alert-success pointer" *ngIf="success" role="alert">
+          Data has been successfully submited!
+        </div>
+        <div class="alert alert-danger pointer" *ngIf="failure" role="alert">
+          An unexpected error occured while submitting your entry. Please recheck submitted data or try it later.
+        </div>
+        <div class="reset-password">
+          <a routerLink="/forgot" class="reset-password-link text-primary">Забыли пароль?</a>
+        </div>
+        <div class="form-group text-center mx-auto" *ngIf="!submitted">
+          <button class="btn btn-secondary" (click)="login()">Войти</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

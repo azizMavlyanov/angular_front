@@ -1,0 +1,48 @@
+<!-- Main Content -->
+<div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <h1 style="text-align: center; margin-bottom: 12px; color: lightslategray;">Регистрация</h1>
+      <form novalidate>
+        <div class="control-group">
+          <div class="form-group">
+            <label>Имя</label>
+            <input type="text" [(ngModel)]="signup.name" [disabled]="processing" name="title" class="form-control"
+              placeholder="Имя">
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group">
+            <label>Электронная почта</label>
+            <input type="text" [(ngModel)]="signup.email" [disabled]="processing" name="email" class="form-control"
+              placeholder="Электронная почта">
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group">
+            <label>Пароль</label>
+            <input type="text" [(ngModel)]="signup.password" [disabled]="processing" name="password" class="form-control"
+              placeholder="Пароль">
+          </div>
+        </div>
+        <div class="control-group">
+            <div class="form-group">
+              <label>Подтверждение пароля</label>
+              <input type="text" [(ngModel)]="signup.password_confirmation" [disabled]="processing" name="confirmpassword" class="form-control"
+              placeholder="Подтверждение пароля">
+            </div>
+          </div>
+        <br>
+        <app-loading *ngIf="processing && (!success && !failure)"></app-loading>
+        <div class="alert alert-success pointer" *ngIf="success" role="alert">
+          Data has been successfully submited!
+        </div>
+        <div class="alert alert-danger pointer" *ngIf="failure" role="alert">
+          An unexpected error occured while submitting your entry. Please recheck submitted data or try it later.
+        </div>
+        <div class="form-group text-center mx-auto" *ngIf="!submitted">
+          <button class="btn btn-secondary" (click)="submit()">Зарегистрироваться</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

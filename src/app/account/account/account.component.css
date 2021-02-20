@@ -1,0 +1,27 @@
+.account-title {
+  text-align: center;
+}
+
+.profile-container {
+  margin-top: 20px;
+}
+
+.profile-image {
+  margin: 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+.profile-image > image {
+  max-width: 100%;
+  display: block;
+}
+
+@media (max-width: 576px) {
+  .profile-container {
+    flex-direction: column;
+  }
+}

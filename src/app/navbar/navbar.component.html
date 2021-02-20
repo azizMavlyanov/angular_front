@@ -1,0 +1,41 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand pointer" routerLink="home">Голос Студента</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link pointer" routerLink="home">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pointer" routerLink="about">О нас</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pointer" routerLink="posts">Статьи</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pointer" routerLink="contact">Контакты</a>
+          </li>
+          <li class="nav-item" *ngIf="!isLoggedIn">
+            <a class="nav-link pointer" routerLink="/login">Войти</a>
+          </li>
+          <li class="nav-item" *ngIf="isLoggedIn">
+            <a class="nav-link pointer" (click)="logout();">Выйти</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pointer" routerLink="registration">зарегистрироваться</a>
+          </li>
+          <li class="nav-item" *ngIf="isLoggedIn">
+            <a class="nav-link pointer" routerLink="account">Личный кабинет</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
