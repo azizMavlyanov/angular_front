@@ -1,4 +1,5 @@
 import { Component, Injectable, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { BlogPost } from 'src/app/models/blog-post';
@@ -38,6 +39,7 @@ export class AccountComponent implements OnInit {
   public failure: boolean = false;
 
   constructor(private postService: BlogPostService,
+    private router: Router,
     private uploadService: UploadService,
     private userService: UserService,
     private store: Store<{userState: State}>) { }
@@ -81,6 +83,7 @@ export class AccountComponent implements OnInit {
           console.log("User photo updated");
           this.processing = false;
           this.success = true;
+          this.router.navigateByUrl("/account");
         }, error => {
             console.log(error.status);
             this.processing = false;
@@ -101,6 +104,7 @@ export class AccountComponent implements OnInit {
         console.log("User photo updated");
         this.processing = false;
         this.success = true;
+        this.router.navigateByUrl("/account");
       }, error => {
           console.log(error.status);
           this.processing = false;
