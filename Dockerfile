@@ -8,6 +8,7 @@ ARG API_URL
 ENV API_URL=$API_URL
 
 COPY . .
+RUN npm run test-headless
 RUN npm run build 
 
 FROM nginx:alpine
