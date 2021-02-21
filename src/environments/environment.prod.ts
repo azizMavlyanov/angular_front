@@ -1,9 +1,7 @@
-const API_URL = process.env.API_URL;
-
 export const environment = {
   production: true,
   api: {
-    base: API_URL,
+    base: "https://yourstudentvoiceapi.herokuapp.com",
     prefix: "/api/",
     authPrefix: "auth/",
     login: "login/",
