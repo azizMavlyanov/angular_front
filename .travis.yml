@@ -9,7 +9,7 @@ before_script:
   - docker login --username=$HEROKU_LOGIN --password=$HEROKU_API_KEY registry.heroku.com  
 
 script:
-  - docker build -t azizmavlyanov/angular-front:v1 -f Dockerfile .
+  - docker build -t azizmavlyanov/angular-front:v1 --build-arg API_URL=$API_URL -f Dockerfile .
   - docker tag azizmavlyanov/angular-front:v1 registry.heroku.com/$HEROKU_APP/web 
 
 deploy:   

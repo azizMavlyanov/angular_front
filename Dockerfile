@@ -3,6 +3,10 @@ WORKDIR '/app'
 COPY package.json package-lock.json ./
 RUN npm install
 RUN echo $PORT
+
+ARG API_URL
+ENV API_URL=$API_URL
+
 COPY . .
 RUN npm run build 
 

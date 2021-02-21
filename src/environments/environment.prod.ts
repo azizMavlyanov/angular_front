@@ -1,7 +1,9 @@
+const API_URL = process.env.API_URL;
+
 export const environment = {
   production: true,
   api: {
-    base: "http://localhost:8000",
+    base: API_URL,
     prefix: "/api/",
     authPrefix: "auth/",
     login: "login/",
