@@ -1,5 +1,23 @@
 sudo: required
 
+language: node_js
+node_js:
+  - '14'
+
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+cache:
+  directories:
+    - ./node_modules
+
+install:
+  - npm install
+
 services:
   - docker
 
@@ -9,6 +27,7 @@ before_script:
   - docker login --username=$HEROKU_LOGIN --password=$HEROKU_API_KEY registry.heroku.com  
 
 script:
+  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadless
   - docker build -t azizmavlyanov/angular-front:v1 --build-arg API_URL=$API_URL -f Dockerfile .
   - docker tag azizmavlyanov/angular-front:v1 registry.heroku.com/$HEROKU_APP/web 
 
