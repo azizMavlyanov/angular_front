@@ -1,27 +1,31 @@
-# AngularFront
+# Blog Post (Frontend)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
+## Demo version: [Demo](https://budgetappexpensify.herokuapp.com/)
 
-## Development server
+## Author
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Aziz Mavlyanov
 
-## Code scaffolding
+## Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+HTML, CSS, JavaScript, Angular, Docker, Travis CI/CD, Heroku
 
-## Build
+## Testing, Build and deployment stages
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+1\) The first stage starts with pushing changes to the repository
 
-## Running unit tests
+2\) After pushing the changes Travis CI/CD starts working on the project, using [.travis.yml](https://github.com/azizMavlyanov/angular_front/blob/master/.travis.yml) configuration file for Travis.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3\) Travis CI/CD sets up such necessary technologies like Node.js, Docker, and other dependencies for testing, build and deployment.
 
-## Running end-to-end tests
+4\) Travis CI/CD arranges authentication in Docker and Heroku, using such Travis environment variables like **$DOCKER_PASSWORD, $DOCKER_USERNAME, $HEROKU_LOGIN, $HEROKU_API_KEY**. These environment variables predefined in the Travis account for these project and available for only owner of the project.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+5\) Travis CI/CD runs tests before building.
 
-## Further help
+6\) After successfully passed tests Travis CI/CD starts building the project as Docker image, using [Dockerfile](https://github.com/azizMavlyanov/angular_front/blob/master/Dockerfile). **\$API_UR** environment variable predefined in the Travis account.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+7\) Travis CI/CD sets up docker image alias for heroku registry. **\$HEROKU_APP** environment variable redefined in the Travis account.
+
+8\) Travis CI/CD pushes built image to docker and heroku registries.
+
+9\) Travis CI/CD deploys the project, using built image from heroku registry to heroku production server.
