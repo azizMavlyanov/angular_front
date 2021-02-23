@@ -2,6 +2,10 @@
 
 ## Demo version: [Demo](https://yourstudentvoice.herokuapp.com/home)
 
+## Backend
+
+Link to backend repository: [backend link](https://github.com/azizMavlyanov/laravel-back)
+
 ## Author
 
 Aziz Mavlyanov
@@ -16,7 +20,7 @@ HTML, CSS, JavaScript, Angular, Docker, Travis CI/CD, Heroku
 
 2\) After pushing the changes Travis CI/CD starts working on the project, using [.travis.yml](https://github.com/azizMavlyanov/angular_front/blob/master/.travis.yml) configuration file for Travis.
 
-3\) Travis CI/CD sets up such necessary technologies like Node.js, Docker, and other dependencies for testing, build and deployment.
+3\) Travis CI/CD sets up such necessary technologies like Node.js, Docker and other dependencies for testing, build and deployment.
 
 4\) Travis CI/CD arranges authentication in Docker and Heroku, using such Travis environment variables like **$DOCKER_PASSWORD, $DOCKER_USERNAME, $HEROKU_LOGIN, $HEROKU_API_KEY**. These environment variables predefined in the Travis account for these project and available for only owner of the project.
 
