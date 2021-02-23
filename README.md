@@ -1,6 +1,6 @@
 # Blog Post (Frontend)
 
-## Demo version: [Demo](https://budgetappexpensify.herokuapp.com/)
+## Demo version: [Demo](https://yourstudentvoice.herokuapp.com/home)
 
 ## Author
 
@@ -24,7 +24,7 @@ HTML, CSS, JavaScript, Angular, Docker, Travis CI/CD, Heroku
 
 6\) After successfully passed tests Travis CI/CD starts building the project as Docker image, using [Dockerfile](https://github.com/azizMavlyanov/angular_front/blob/master/Dockerfile). **\$API_UR** environment variable predefined in the Travis account.
 
-7\) Travis CI/CD sets up docker image alias for heroku registry. **\$HEROKU_APP** environment variable redefined in the Travis account.
+7\) Travis CI/CD sets up docker image alias for heroku registry. **\$HEROKU_APP** environment variable predefined in the Travis account.
 
 8\) Travis CI/CD pushes built image to docker and heroku registries.
 
