@@ -7,19 +7,22 @@ import { BlogPostService } from "../service/blog-post.service";
 import { BlogPost } from "../models/blog-post";
 import { AuthService } from '../service/auth.service';
 import { State } from '../reducers/auth.reducer';
+import { BasicPageComponent } from '../basic-page/basic-page.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent extends BasicPageComponent implements OnInit {
   userState$: Observable<State>;
   loading: boolean = true;
   posts: BlogPost[];
 
   constructor(private postService: BlogPostService, private router: Router,
-      private authService: AuthService, private store: Store<{ userState: State }>) {}
+      private authService: AuthService, private store: Store<{ userState: State }>) {
+        super()
+      }
 
   ngOnInit(): void {
     this.getPosts();

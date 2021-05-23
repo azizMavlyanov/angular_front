@@ -29,6 +29,7 @@ import { VerificationComponent } from './verification/verification.component';
 import { PasswordResetComponent } from './password-reset/password-reset/password-reset.component';
 import { PasswordUpdateComponent } from './password-update/password-update.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { BasicPageComponent } from './basic-page/basic-page.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     VerificationComponent,
     PasswordResetComponent,
     PasswordUpdateComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    BasicPageComponent
   ],
   imports: [
     BrowserModule,

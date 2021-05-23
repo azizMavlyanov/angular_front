@@ -17,7 +17,9 @@ export class PasswordUpdateComponent implements OnInit {
   public success: boolean = false;
   public failure: boolean = false;
 
-  constructor(private authService: AuthService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private authService: AuthService,
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.updatePassword = new UpdatePassword();
